@@ -1,6 +1,10 @@
 [![Tigasmos Logo](https://github.com/ndawinata/server-tigasmos/blob/master/logo.png)](http://tigasmos-stmkg.my.id/)
 
-    Tide Gauge Monitoring Station adalah stasiun yang digunakan untuk memonitor pasang dan surut air laut menggunakan sensor untuk mengukur ketinggian pasang dan surut air laut terhadap mean sea level. data hasil pengamatan pasang dan surut air laut akan ditampilkan ke website, aplikasi mobile android, dan aplikasi mobile iOS. source code pada halaman ini adalah source code pada server tigasmos yang berperan sebagai server middleware. server menerima data dari station tigasmosmos menggunakan konsep IoT dengan http POST lalu data akan di tampilkan secara realtime di seluruh platform tigasmos menggunakan websocket.
+Tide Gauge Monitoring Station adalah stasiun yang digunakan untuk memonitor pasang dan surut air laut menggunakan 
+sensor untuk mengukur ketinggian pasang dan surut air laut terhadap mean sea level. data hasil pengamatan pasang dan 
+surut air laut akan ditampilkan ke website, aplikasi mobile android, dan aplikasi mobile iOS. source code pada halaman 
+ini adalah source code pada server tigasmos yang berperan sebagai server middleware. server menerima data dari station 
+tigasmosmos menggunakan konsep IoT dengan http POST lalu data akan di tampilkan secara realtime di seluruh platform tigasmos menggunakan websocket.
 
 ## Quick Start
 
