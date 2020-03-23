@@ -1,0 +1,39 @@
+{
+  "name": "server-tigasmos",
+  "version": "1.0.0",
+  "description": "Middleware Server Tide Gauge Monitoring Station (TIGASMOS)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ndawinata/server-tigasmos.git"
+  },
+  "keywords": [
+    "node.js",
+    "express.js",
+    "mongoose",
+    "socke.io",
+    "mongoDB",
+    "babel"
+  ],
+  "author": "nanda winata",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ndawinata/server-tigasmos/issues"
+  },
+  "homepage": "https://github.com/ndawinata/server-tigasmos#readme",
+  "dependencies": {
+    "body-parse": "^0.1.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.5",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-latest": "^6.24.1",
+    "nodemon": "^2.0.2"
+  }
+}
