@@ -4,7 +4,10 @@
   "description": "Middleware Server Tide Gauge Monitoring Station (TIGASMOS)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js --exec babel-node",
+    "build": "babel lib -d dist",
+    "serve": "node dist/index.js"
   },
   "repository": {
     "type": "git",

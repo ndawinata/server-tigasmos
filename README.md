@@ -11,13 +11,13 @@ tigasmosmos menggunakan konsep IoT dengan http POST lalu data akan di tampilkan 
     Install dependencies:
 
 ```bash
-$ npm install
+$ npm install  or  yarn install
 ```
 
     Start the server:
 
 ```bash
-$ npm start
+$ npm start or yarn start
 ```
 
   View the server at: http://localhost:5000
