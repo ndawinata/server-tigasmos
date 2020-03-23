@@ -1,4 +1,4 @@
-[![Tigasmos Logo](https://github.com/ndawinata/server-tigasmos/blob/master/logo.png)](http://tigasmos-stmkg.my.id/)
+[![Tigasmos Logo](https://github.com/ndawinata/server-tigasmos/blob/master/logo-resize.png)](http://tigasmos-stmkg.my.id/)
 
 Tide Gauge Monitoring Station adalah stasiun yang digunakan untuk memonitor pasang dan surut air laut menggunakan 
 sensor untuk mengukur ketinggian pasang dan surut air laut terhadap mean sea level. data hasil pengamatan pasang dan 
