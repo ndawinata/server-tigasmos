@@ -6,6 +6,7 @@ import Route from './route'
 const app = express()
 const server = require('http').Server(app)
 const io = require('socket.io')(server)
+global.io = io
 
 const port = 5000
 
