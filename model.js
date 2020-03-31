@@ -6,8 +6,9 @@ var Schema = mongoose.Schema({
     pasut_sensor_ultrasonik: Number
 })
 var notifSchema = mongoose.Schema({
-    date: Date,
-    pesan: String,
+    nama: String,
+    date: String,
+    ketinggian: Number,
     lokasi: String
 })
 

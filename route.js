@@ -3,6 +3,9 @@ import * as controller from './controller'
 
 const Route = express.Router()
 
+Route.route('/notif')
+    .get(controller.getnotif)
+
 Route.route('/site-1')
     .get(controller.getsite_1)
     .post(controller.addsite_1)

@@ -10,6 +10,7 @@ let site1LatDown = site1Lat - 5
 let site1LonUp = site1Lon + 5
 let site1LonDown = site1Lon - 5
 let rangeLat, rangeLon, latPot, lonPot
+const moment = require('moment')
 // input test
 latPot = -6.481760
 lonPot = 105.669444
@@ -29,3 +30,19 @@ budi = 2
 if (rangeLon && rangeLon && budi == 2) {
     console.log('Range Lat : ' + rangeLat + ' | Range Lon : ' + rangeLon)
 }
+
+var hasil = 5
+
+var notif = {
+    'nama':'site 1',
+    'date': moment().format(),
+    'ketinggian': hasil,
+    'lokasi': `${site1Lat}, ${site1Lon}`
+}
+console.log(notif)
+
+function s(){
+    var a = 10
+}
+s()
+console.log(a)
