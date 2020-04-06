@@ -2,6 +2,7 @@ import express from 'express'
 import bodyParser from 'body-parser'
 import mongoose from 'mongoose'
 import Route from './route'
+import cors from 'cors'
 
 const app = express()
 const server = require('http').Server(app)
@@ -11,6 +12,8 @@ global.io = io
 const port = 5000
 
 // izinkan Cors
+app.use(cors()) 
+// "cors" biar dapat melakukan post data dari front end
 app.use((request, response, next) => {
     response.header('Access-Control-Allow-Origin', '*')
     response.header('Access-Control-Allow-Header', 'Origin, X-Requested-With, Content-Type, Accept')
