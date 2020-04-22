@@ -14,7 +14,7 @@ tigasmosmos menggunakan konsep IoT dengan http POST lalu data akan di tampilkan 
 $ npm install  or  yarn install
 ```
 
-    Start the server:
+Start the server:
 
 ```bash
 $ npm start or yarn start
@@ -23,7 +23,7 @@ $ pm2 start dist/index.js
 or
 $ pm2 start src/server.js
 ```
-  Sebelum  run serve 
+Sebelum  run serve 
 pastkan mem build server
 ```bash
 $ yarn run build
