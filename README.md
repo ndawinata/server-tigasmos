@@ -17,7 +17,7 @@ or
 $ yarn global add pm2
 ```
 
-#Start
+Start
 Start the server:
 
 ```bash
@@ -27,7 +27,7 @@ $ pm2 start dist/index.js
 or
 $ pm2 start src/server.js
 ```
-#Build
+Build
 untuk mebuild program :
 ```bash
 $ yarn run build
@@ -43,14 +43,14 @@ or
 $ npm run clean
 ```
 
-#Production
+Production
 ```bash
 $ yarn run production
 or 
 $ npm run production
 ```
 
-#stop PM2
+stop PM2
 ```bash
 $ pm2 stop app_name
 $ pm2 stop id_app
