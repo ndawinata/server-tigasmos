@@ -137,7 +137,7 @@
                     // var coba = JSON.stringify(dataPasut)
                     // var obj = JSON.parse(JSON.stringify(dataPasut))
                     // console.log(JSON.parse(JSON.stringify(dataPasut)))
-                    axios.post("http://localhost:5000/api/site-1", dataPasut)
+                    axios.post("http://tigasmos-stmkg.my.id:5000/api/site-1", dataPasut)
                         .then(response => console.log(response))
                 })
 
@@ -146,7 +146,7 @@
 
                 // Get Json dan masukkan ke tabel
 
-                axios.get('http://localhost:5000/api/site-1')
+                axios.get('http://tigasmos-stmkg.my.id:5000/api/site-1')
                     // .then(response => response.data.datas.forEach(element => console.log(element.name)))
                     // .then(response => console.log(response.data.datas))
                     // .then(response => response.data.datas.forEach(element => console.log(element.name)))
