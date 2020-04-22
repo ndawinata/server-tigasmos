@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -R dist",
     "start": "nodemon src/server.js",
     "build": "npx babel src -d dist",
-    "serve": "nodemon dist/index.js"
+    "production": "npm run build && pm2 start dist/index.js"
   },
   "repository": {
     "type": "git",

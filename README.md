@@ -8,12 +8,16 @@ tigasmosmos menggunakan konsep IoT dengan http POST lalu data akan di tampilkan 
 
 ## Quick Start
 
-    Install dependencies:
+Install dependencies:
 
 ```bash
 $ npm install  or  yarn install
+$ npm install pm2@latest -g
+or
+$ yarn global add pm2
 ```
 
+#Start
 Start the server:
 
 ```bash
@@ -23,15 +27,30 @@ $ pm2 start dist/index.js
 or
 $ pm2 start src/server.js
 ```
-Sebelum  run serve 
-pastkan mem build server
+#Build
+untuk mebuild program :
 ```bash
 $ yarn run build
 or 
 $ npm run build
 ```
 
-stop PM2
+Sebelum Production 
+pastkan membersihkan folder dist :
+```bash
+$ yarn run clean
+or 
+$ npm run clean
+```
+
+#Production
+```bash
+$ yarn run production
+or 
+$ npm run production
+```
+
+#stop PM2
 ```bash
 $ pm2 stop app_name
 $ pm2 stop id_app
