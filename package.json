@@ -5,12 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rimraf dist",
-    "start": "nodemon src/server.js",
-    "build": "npx babel src -d dist",
-    "production": "npm run build && pm2 start dist/index.js",
-    "prod:build": "rimraf lib && babel src -d lib --ignore index.js",
-    "prod:start": "cross-env NODE_ENV=production pm2 start dist/index.js"
+    "start": "nodemon src/index.js --exec babel-node",
+    "build": "babel src -d dist",
+    "serve": "node dist/index.js"
+  
   },
   "repository": {
     "type": "git",
