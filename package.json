@@ -5,10 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rm -R dist",
+    "clean": "rimraf dist",
     "start": "nodemon src/server.js",
     "build": "npx babel src -d dist",
-    "production": "npm run build && pm2 start dist/index.js"
+    "production": "npm run build && pm2 start dist/index.js",
+    "prod:build": "rimraf lib && babel src -d lib --ignore index.js",
+    "prod:start": "cross-env NODE_ENV=production pm2 start dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -30,7 +32,6 @@
   "homepage": "https://github.com/ndawinata/server-tigasmos#readme",
   "dependencies": {
     "axios": "^0.19.2",
-    "babel-register": "^6.26.0",
     "body-parse": "^0.1.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
@@ -44,6 +45,6 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-latest": "^6.24.1",
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.3"
   }
 }
