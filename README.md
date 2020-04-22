@@ -31,6 +31,18 @@ or
 $ npm run build
 ```
 
+stop PM2
+```bash
+$ pm2 stop app_name
+$ pm2 stop id_app
+$ pm2 stop all
+```
+untuk memonitor :
+```bash
+$ pm2 monit
+$ pm2 plus
+```
+
 View the server at: http://localhost:5000
 
 ## Developer
