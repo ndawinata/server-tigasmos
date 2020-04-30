@@ -204,7 +204,7 @@ export const addsite_1 = (request, response) => {
     main()
     // handle post response
     newData.save((error, data) => {
-        global.io.emit('site1', data)
+        global.io.emit('site-1', data)
         if (error) {
             return response.json({
                 'success': false,
@@ -318,7 +318,7 @@ export const addsite_2 = (request, response) => {
     // handle post response
 
     newData.save((error, data) => {
-        global.io.emit('site2', data)
+        global.io.emit('site-2', data)
         if (error) {
             return response.json({
                 'success': false,
@@ -432,7 +432,7 @@ export const addsite_3 = (request, response) => {
     // handle post response
 
     newData.save((error, data) => {
-        global.io.emit('site3', data)
+        global.io.emit('site-3', data)
         if (error) {
             return response.json({
                 'success': false,
