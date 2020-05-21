@@ -18,4 +18,19 @@ Route.route('/site-3')
     .get(controller.getsite_3)
     .post(controller.addsite_3)
 
+Route.route('/site-1/:id')
+    .get(controller.getonesite_1)
+    .put(controller.updatesite1)
+    .delete(controller.deletesite1)
+
+Route.route('/site-2/:id')
+    .get(controller.getonesite_2)
+    .put(controller.updatesite2)
+    .delete(controller.deletesite2)
+
+Route.route('/site-3/:id')
+    .get(controller.getonesite_3)
+    .put(controller.updatesite3)
+    .delete(controller.deletesite3)
+
 export default Route

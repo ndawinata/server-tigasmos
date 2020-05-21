@@ -447,3 +447,195 @@ export const addsite_3 = (request, response) => {
         })
     })
 }
+
+// Put, get by id, delete
+
+// -------------- Site 1 ------------------
+
+// get by id
+export const getonesite_1 = (request, response) => {
+    site1.find({ _id: request.params.id }).exec((error, data) => {
+        if (error) {
+        return response.json({
+            'success': false,
+            'message': 'Gagal mengambil data!',
+            error
+        })
+    }
+        return response.json({
+            'success': true,
+            'message': 'Berhasil mengambil data!',
+            data
+        })
+    })
+}
+
+// Put / Update
+export const updatesite1 = (request, response) => {
+    site1.findOneAndUpdate({ _id: request.params.id }, request.body, { new: true }, (error, data) => {
+        if (error) {
+            return response.json({
+                'success': false,
+                'message': 'Gagal mengupdate data!',
+                error
+            })
+        }
+        return response.json({
+            'success': true,
+            'message': 'Berhasil mengupdate data!',
+            data
+            })
+        })
+}
+
+// delete data
+
+export const deletesite1 = (request, response) => {
+    site1.findByIdAndRemove({ _id: request.params.id }).exec((error, data) => {
+        if (error) {
+            return response.json({
+                'success': false,
+                'message': 'Terjadi error!',
+                error
+                })
+            }
+        if (Object.keys(data).length > 0) {
+            return response.json({
+            'success': true,
+            'message': `Berhasil menghapus data Id ${request.params.id}`,
+            data
+            })
+        } else {
+            return response.json({
+            'success': true,
+            'message': `Tidak ada data dengan Id ${request.params.id}`,
+            })
+        }
+    })
+}
+
+// -------------- Site 2 ------------------
+
+export const getonesite_2 = (request, response) => {
+    site2.find({ _id: request.params.id }).exec((error, data) => {
+        if (error) {
+        return response.json({
+            'success': false,
+            'message': 'Gagal mengambil data!',
+            error
+        })
+    }
+        return response.json({
+            'success': true,
+            'message': 'Berhasil mengambil data!',
+            data
+        })
+    })
+}
+
+// Put / Update
+export const updatesite2 = (request, response) => {
+    site2.findOneAndUpdate({ _id: request.params.id }, request.body, { new: true }, (error, data) => {
+        if (error) {
+            return response.json({
+                'success': false,
+                'message': 'Gagal mengupdate data!',
+                error
+            })
+        }
+        return response.json({
+            'success': true,
+            'message': 'Berhasil mengupdate data!',
+            data
+            })
+        })
+}
+
+// delete data
+
+export const deletesite2 = (request, response) => {
+    site2.findByIdAndRemove({ _id: request.params.id }).exec((error, data) => {
+        if (error) {
+            return response.json({
+                'success': false,
+                'message': 'Terjadi error!',
+                error
+                })
+            }
+        if (Object.keys(data).length > 0) {
+            return response.json({
+            'success': true,
+            'message': `Berhasil menghapus data Id ${request.params.id}`,
+            data
+            })
+        } else {
+            return response.json({
+            'success': true,
+            'message': `Tidak ada data dengan Id ${request.params.id}`,
+            })
+        }
+    })
+}
+
+// -------------- Site 3 ------------------
+
+export const getonesite_3 = (request, response) => {
+    site3.find({ _id: request.params.id }).exec((error, data) => {
+        if (error) {
+        return response.json({
+            'success': false,
+            'message': 'Gagal mengambil data!',
+            error
+        })
+    }
+        return response.json({
+            'success': true,
+            'message': 'Berhasil mengambil data!',
+            data
+        })
+    })
+}
+
+// Put / Update
+export const updatesite3 = (request, response) => {
+    site3.findOneAndUpdate({ _id: request.params.id }, request.body, { new: true }, (error, data) => {
+        if (error) {
+            return response.json({
+                'success': false,
+                'message': 'Gagal mengupdate data!',
+                error
+            })
+        }
+        return response.json({
+            'success': true,
+            'message': 'Berhasil mengupdate data!',
+            data
+            })
+        })
+}
+
+// delete data
+
+export const deletesite3 = (request, response) => {
+    site3.findByIdAndRemove({ _id: request.params.id }).exec((error, data) => {
+        if (error) {
+            return response.json({
+                'success': false,
+                'message': 'Terjadi error!',
+                error
+                })
+            }
+        if (Object.keys(data).length > 0) {
+            return response.json({
+            'success': true,
+            'message': `Berhasil menghapus data Id ${request.params.id}`,
+            data
+            })
+        } else {
+            return response.json({
+            'success': true,
+            'message': `Tidak ada data dengan Id ${request.params.id}`,
+            })
+        }
+    })
+}

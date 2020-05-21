@@ -30,6 +30,7 @@ app.use(bodyParser.urlencoded({
 mongoose.Promise = global.Promise
 mongoose.connect('mongodb://localhost/server-tigasmos', {
     useNewUrlParser: true,
+    useFindAndModify: false,
     useUnifiedTopology: true
 })
 
