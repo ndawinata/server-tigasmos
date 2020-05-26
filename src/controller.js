@@ -123,11 +123,13 @@ export const addsite_1 = (request, response) => {
                 var json = parser.toJson(respon.data)
                 var obj = JSON.parse(json)
                 tanggal = obj.Infotsunami.Gempa.Tanggal
-                latPot = obj.Infotsunami.Gempa.Lintang
-                lonPot = obj.Infotsunami.Gempa.Bujur
+                // uncomment dibawah untuk custom tgl potensi tsunami
+                tanggal = '03-Apr-20'
+                // latPot = obj.Infotsunami.Gempa.Lintang
+                // lonPot = obj.Infotsunami.Gempa.Bujur
                 // tesing uncomment kode dibawah ini
-                // latPot = -6.481760
-                // lonPot = 105.669444
+                latPot = -6.481760
+                lonPot = 105.669444
             })
 
         // ------------------------ PENTING --------------------------
@@ -160,7 +162,7 @@ export const addsite_1 = (request, response) => {
         newPasut = newData.pasut_sensor_ultrasonik
         dateNow = moment().format('DD-MMM-YY')
         // tesing uncomment kode dibawah
-        // dateNow = "14-Nov-19"
+        dateNow = "03-Apr-20"
         // ---------------
         datePotensi = tanggal
 
