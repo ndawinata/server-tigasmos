@@ -180,6 +180,7 @@ export const addsite_1 = (request, response) => {
         }
 
         let hasil = newPasut - oldPasut
+        hasil = hasil.toFixed(2)
         if (oldDate != datePotensi) {
             status = 0
         }
@@ -293,6 +294,7 @@ export const addsite_2 = (request, response) => {
         }
 
         let hasil = newPasut - oldPasut
+        hasil = hasil.toFixed(2)
         if (oldDate != datePotensi) {
             status = 0
         }
@@ -407,6 +409,7 @@ export const addsite_3 = (request, response) => {
         }
 
         let hasil = newPasut - oldPasut
+        hasil = hasil.toFixed(2)
         if (oldDate != datePotensi) {
             status = 0
         }
