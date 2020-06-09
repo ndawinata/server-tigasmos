@@ -453,6 +453,27 @@ export const addsite_3 = (request, response) => {
     })
 }
 
+// Add data Notif
+export const addnotif = (request, response) => {
+    const newData = new notif(request.body)
+
+    newData.save((error, data) => {
+        global.io.emit('notif', data)
+        if (error) {
+            return response.json({
+                'success': false,
+                'message': 'Gagal menambah data!',
+                error
+            })
+        }
+        return response.json({
+            'success': true,
+            'message': 'Berhasil Menambahkan data',
+            data
+        })
+    })
+}
+
 // Put, get by id, delete
 
 // -------------- Site 1 ------------------
@@ -521,6 +542,7 @@ export const deletesite1 = (request, response) => {
 
 // -------------- Site 2 ------------------
 
+// get by id
 export const getonesite_2 = (request, response) => {
     site2.find({ _id: request.params.id }).exec((error, data) => {
         if (error) {
@@ -584,6 +606,7 @@ export const deletesite2 = (request, response) => {
 
 // -------------- Site 3 ------------------
 
+// get by id
 export const getonesite_3 = (request, response) => {
     site3.find({ _id: request.params.id }).exec((error, data) => {
         if (error) {
@@ -623,6 +646,70 @@ export const updatesite3 = (request, response) => {
 
 export const deletesite3 = (request, response) => {
     site3.findByIdAndRemove({ _id: request.params.id }).exec((error, data) => {
+        if (error) {
+            return response.json({
+                'success': false,
+                'message': 'Terjadi error!',
+                error
+                })
+            }
+        if (Object.keys(data).length > 0) {
+            return response.json({
+            'success': true,
+            'message': `Berhasil menghapus data Id ${request.params.id}`,
+            data
+            })
+        } else {
+            return response.json({
+            'success': true,
+            'message': `Tidak ada data dengan Id ${request.params.id}`,
+            })
+        }
+    })
+}
+
+// -------------- Notif ------------------
+
+// get by id
+export const getonenotif = (request, response) => {
+    notif.find({ _id: request.params.id }).exec((error, data) => {
+        if (error) {
+        return response.json({
+            'success': false,
+            'message': 'Gagal mengambil data!',
+            error
+        })
+    }
+        return response.json({
+            'success': true,
+            'message': 'Berhasil mengambil data!',
+            data
+        })
+    })
+}
+
+// Put / Update
+export const updatenotif = (request, response) => {
+    notif.findOneAndUpdate({ _id: request.params.id }, request.body, { new: true }, (error, data) => {
+        if (error) {
+            return response.json({
+                'success': false,
+                'message': 'Gagal mengupdate data!',
+                error
+            })
+        }
+        return response.json({
+            'success': true,
+            'message': 'Berhasil mengupdate data!',
+            data
+            })
+        })
+}
+
+// delete data
+
+export const deletenotif = (request, response) => {
+    notif.findByIdAndRemove({ _id: request.params.id }).exec((error, data) => {
         if (error) {
             return response.json({
                 'success': false,

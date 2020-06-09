@@ -5,6 +5,7 @@ const Route = express.Router()
 
 Route.route('/notif')
     .get(controller.getnotif)
+    .post(controller.addnotif)
 
 Route.route('/site-1')
     .get(controller.getsite_1)
@@ -32,5 +33,10 @@ Route.route('/site-3/:id')
     .get(controller.getonesite_3)
     .put(controller.updatesite3)
     .delete(controller.deletesite3)
+
+Route.route('/notif/:id')
+    .get(controller.getonenotif)
+    .put(controller.updatenotif)
+    .delete(controller.deletenotif)
 
 export default Route
