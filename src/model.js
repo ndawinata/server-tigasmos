@@ -17,6 +17,8 @@ var Lokasi = mongoose.Schema({
     longitude: Number
 })
 var Delta = mongoose.Schema({
+    centerlat: Number,
+    centerlon: Number,
     latitude: Number,
     longitude: Number
 })
