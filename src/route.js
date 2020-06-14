@@ -3,6 +3,10 @@ import * as controller from './controller'
 
 const Route = express.Router()
 
+Route.route('/delta')
+    .get(controller.getdelta)
+    .post(controller.adddelta)
+
 Route.route('/lokasi')
     .get(controller.getlokasi)
     .post(controller.addlokasi)
@@ -26,6 +30,10 @@ Route.route('/site-3')
 Route.route('/lokasi/:id')
     .put(controller.updatelokasi)
     .delete(controller.deletelokasi)
+
+Route.route('/delta/:id')
+    .put(controller.updatedelta)
+    .delete(controller.deletedelta)
 
 Route.route('/site-1/:id')
     .get(controller.getonesite_1)

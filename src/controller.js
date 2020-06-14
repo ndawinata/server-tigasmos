@@ -15,7 +15,25 @@ import {
 
 // ------- Get Data ---------
 
-// Get Lokasi Site 1
+// Get Lokasi Delta
+export const getdelta = (request, response) => {
+    delta.find().exec((error, datas) => {
+        if (error) {
+            return response.json({
+                'success': false,
+                'message': 'Gagal mengambil datas!',
+                error
+            })
+        }
+        return response.json({
+            'success': true,
+            'message': 'Berhasil mengambil datas!',
+            datas
+        })
+    })
+}
+
+// Get Lokasi Lokasi
 export const getlokasi = (request, response) => {
     lokasi.find().exec((error, datas) => {
         if (error) {
@@ -471,6 +489,26 @@ export const addsite_3 = (request, response) => {
     })
 }
 
+// Add Delta Maps
+export const adddelta = (request, response) => {
+    const newData = new delta(request.body)
+
+    newData.save((error, data) => {
+        if (error) {
+            return response.json({
+                'success': false,
+                'message': 'Gagal menambah data!',
+                error
+            })
+        }
+        return response.json({
+            'success': true,
+            'message': 'Berhasil Menambahkan data',
+            data
+        })
+    })
+}
+
 // Add Lokasi
 export const addlokasi = (request, response) => {
     const newData = new lokasi(request.body)
@@ -513,6 +551,49 @@ export const addnotif = (request, response) => {
 }
 
 // Put, get by id, delete
+
+// -------------- Delta Maps ------------------
+// put
+export const updatedelta = (request, response) => {
+    delta.findOneAndUpdate({ _id: request.params.id }, request.body, { new: true }, (error, data) => {
+        if (error) {
+            return response.json({
+                'success': false,
+                'message': 'Gagal mengupdate data!',
+                error
+            })
+        }
+        return response.json({
+            'success': true,
+            'message': 'Berhasil mengupdate data!',
+            data
+            })
+        })
+}
+// delete
+export const deletedelta = (request, response) => {
+    delta.findByIdAndRemove({ _id: request.params.id }).exec((error, data) => {
+        if (error) {
+            return response.json({
+                'success': false,
+                'message': 'Terjadi error!',
+                error
+                })
+            }
+        if (Object.keys(data).length > 0) {
+            return response.json({
+            'success': true,
+            'message': `Berhasil menghapus data Id ${request.params.id}`,
+            data
+            })
+        } else {
+            return response.json({
+            'success': true,
+            'message': `Tidak ada data dengan Id ${request.params.id}`,
+            })
+        }
+    })
+}
 
 // -------------- Lokasi ------------------
 // put
