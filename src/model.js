@@ -21,7 +21,7 @@ var DeltaMaps = mongoose.Schema({
     longitude: Number
 })
 
-const delta = mongoose.model('Lokasi', DeltaMaps)
+const delta = mongoose.model('Delta', DeltaMaps)
 const lokasi = mongoose.model('Lokasi', Lokasi)
 const notif = mongoose.model('Notif', notifSchema)
 const site1 = mongoose.model('Site-1', Schema)
