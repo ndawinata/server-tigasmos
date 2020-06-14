@@ -11,13 +11,20 @@ var notifSchema = mongoose.Schema({
     ketinggian: Number,
     lokasi: String
 })
+var Lokasi = mongoose.Schema({
+    nama: String,
+    latitude: Number,
+    longitude: Number
+})
 
+const lokasi = mongoose.model('Lokasi', Lokasi)
 const notif = mongoose.model('Notif', notifSchema)
 const site1 = mongoose.model('Site-1', Schema)
 const site2 = mongoose.model('Site-2', Schema)
 const site3 = mongoose.model('Site-3', Schema)
 
 export {
+    lokasi,
     notif,
     site1,
     site2,

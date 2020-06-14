@@ -9,11 +9,29 @@ import {
     site1,
     site2,
     site3,
-    notif
+    notif,
+    lokasi
 } from './model'
 
 // ------- Get Data ---------
 
+// Get Lokasi Site 1
+export const getlokasi = (request, response) => {
+    lokasi.find().exec((error, datas) => {
+        if (error) {
+            return response.json({
+                'success': false,
+                'message': 'Gagal mengambil datas!',
+                error
+            })
+        }
+        return response.json({
+            'success': true,
+            'message': 'Berhasil mengambil datas!',
+            datas
+        })
+    })
+}
 
 // Get data site 1
 export const getsite_1 = (request, response) => {
@@ -453,6 +471,26 @@ export const addsite_3 = (request, response) => {
     })
 }
 
+// Add Lokasi
+export const addlokasi = (request, response) => {
+    const newData = new lokasi(request.body)
+
+    newData.save((error, data) => {
+        if (error) {
+            return response.json({
+                'success': false,
+                'message': 'Gagal menambah data!',
+                error
+            })
+        }
+        return response.json({
+            'success': true,
+            'message': 'Berhasil Menambahkan data',
+            data
+        })
+    })
+}
+
 // Add data Notif
 export const addnotif = (request, response) => {
     const newData = new notif(request.body)
@@ -476,6 +514,49 @@ export const addnotif = (request, response) => {
 
 // Put, get by id, delete
 
+// -------------- Lokasi ------------------
+// put
+export const updatelokasi = (request, response) => {
+    lokasi.findOneAndUpdate({ _id: request.params.id }, request.body, { new: true }, (error, data) => {
+        if (error) {
+            return response.json({
+                'success': false,
+                'message': 'Gagal mengupdate data!',
+                error
+            })
+        }
+        return response.json({
+            'success': true,
+            'message': 'Berhasil mengupdate data!',
+            data
+            })
+        })
+}
+// delete
+export const deletelokasi = (request, response) => {
+    lokasi.findByIdAndRemove({ _id: request.params.id }).exec((error, data) => {
+        if (error) {
+            return response.json({
+                'success': false,
+                'message': 'Terjadi error!',
+                error
+                })
+            }
+        if (Object.keys(data).length > 0) {
+            return response.json({
+            'success': true,
+            'message': `Berhasil menghapus data Id ${request.params.id}`,
+            data
+            })
+        } else {
+            return response.json({
+            'success': true,
+            'message': `Tidak ada data dengan Id ${request.params.id}`,
+            })
+        }
+    })
+}
+
 // -------------- Site 1 ------------------
 
 // get by id
@@ -497,6 +578,7 @@ export const getonesite_1 = (request, response) => {
 }
 
 // Put / Update
+
 export const updatesite1 = (request, response) => {
     site1.findOneAndUpdate({ _id: request.params.id }, request.body, { new: true }, (error, data) => {
         if (error) {

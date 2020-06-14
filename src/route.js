@@ -3,6 +3,10 @@ import * as controller from './controller'
 
 const Route = express.Router()
 
+Route.route('/lokasi')
+    .get(controller.getlokasi)
+    .post(controller.addlokasi)
+
 Route.route('/notif')
     .get(controller.getnotif)
     .post(controller.addnotif)
@@ -18,6 +22,10 @@ Route.route('/site-2')
 Route.route('/site-3')
     .get(controller.getsite_3)
     .post(controller.addsite_3)
+
+Route.route('/lokasi/:id')
+    .put(controller.updatelokasi)
+    .delete(controller.deletelokasi)
 
 Route.route('/site-1/:id')
     .get(controller.getonesite_1)
