@@ -10,14 +10,15 @@ import {
     site2,
     site3,
     notif,
-    lokasi
+    lokasi,
+    deltamaps
 } from './model'
 
 // ------- Get Data ---------
 
 // Get Lokasi Delta
 export const getdelta = (request, response) => {
-    delta.find().exec((error, datas) => {
+    deltamaps.find().exec((error, datas) => {
         if (error) {
             return response.json({
                 'success': false,
@@ -491,7 +492,7 @@ export const addsite_3 = (request, response) => {
 
 // Add Delta Maps
 export const adddelta = (request, response) => {
-    const newData = new delta(request.body)
+    const newData = new deltamaps(request.body)
 
     newData.save((error, data) => {
         if (error) {
@@ -555,7 +556,7 @@ export const addnotif = (request, response) => {
 // -------------- Delta Maps ------------------
 // put
 export const updatedelta = (request, response) => {
-    delta.findOneAndUpdate({ _id: request.params.id }, request.body, { new: true }, (error, data) => {
+    deltamaps.findOneAndUpdate({ _id: request.params.id }, request.body, { new: true }, (error, data) => {
         if (error) {
             return response.json({
                 'success': false,
@@ -572,7 +573,7 @@ export const updatedelta = (request, response) => {
 }
 // delete
 export const deletedelta = (request, response) => {
-    delta.findByIdAndRemove({ _id: request.params.id }).exec((error, data) => {
+    deltamaps.findByIdAndRemove({ _id: request.params.id }).exec((error, data) => {
         if (error) {
             return response.json({
                 'success': false,
