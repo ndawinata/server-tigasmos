@@ -8,41 +8,23 @@
     "start": "nodemon src/index.js --exec babel-node",
     "build": "babel src -d dist",
     "serve": "node dist/index.js"
-  
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ndawinata/server-tigasmos.git"
-  },
-  "keywords": [
-    "node.js",
-    "express.js",
-    "mongoose",
-    "socke.io",
-    "mongoDB",
-    "babel"
-  ],
-  "author": "nanda winata",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ndawinata/server-tigasmos/issues"
-  },
-  "homepage": "https://github.com/ndawinata/server-tigasmos#readme",
   "dependencies": {
     "axios": "^0.19.2",
-    "body-parse": "^0.1.0",
+    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "jquery": "^3.4.1",
-    "moment": "^2.24.0",
-    "mongoose": "^5.9.5",
+    "moment": "^2.26.0",
+    "mongoose": "^5.9.19",
     "socket.io": "^2.3.0",
-    "xml2json": "^0.12.0"
+    "xml2js": "^0.4.23"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-latest": "^6.24.1",
-    "nodemon": "^2.0.3"
+    "nodemon": "^2.0.4"
   }
 }

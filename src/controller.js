@@ -1,10 +1,8 @@
-// import express from 'express'
-// const app = express()
-// const server = require('http').Server(app)
-// const io = require('socket.io')(server)
-const axios = require('axios')
-const parser = require('xml2json');
-const moment = require('moment')
+import axios from 'axios'
+import moment from 'moment'
+import parseString from 'xml2js'
+const parse = parseString.parseString
+
 import {
     site1,
     site2,
@@ -157,8 +155,13 @@ export const addsite_1 = (request, response) => {
         let rangeLat, rangeLon, latPot, lonPot
         await axios.get("https://data.bmkg.go.id/lasttsunami.xml")
             .then(respon => {
-                var json = parser.toJson(respon.data)
-                var obj = JSON.parse(json)
+                let obj
+                parse(respon.data, (err, res)=>{
+                    let dat = JSON.stringify(res)
+                    let json = JSON.parse(dat)
+                    obj = json
+                })
+
                 tanggal = obj.Infotsunami.Gempa.Tanggal
                 // uncomment dibawah untuk custom tgl potensi tsunami
                 tanggal = '03-Apr-20'
@@ -273,8 +276,13 @@ export const addsite_2 = (request, response) => {
         let rangeLat, rangeLon, latPot, lonPot
         await axios.get("https://data.bmkg.go.id/lasttsunami.xml")
             .then(respon => {
-                var json = parser.toJson(respon.data)
-                var obj = JSON.parse(json)
+                let obj
+                parse(respon.data, (err, res)=>{
+                    let dat = JSON.stringify(res)
+                    let json = JSON.parse(dat)
+                    obj = json
+                })
+
                 tanggal = obj.Infotsunami.Gempa.Tanggal
                 latPot = obj.Infotsunami.Gempa.Lintang
                 lonPot = obj.Infotsunami.Gempa.Bujur
@@ -388,8 +396,13 @@ export const addsite_3 = (request, response) => {
         let rangeLat, rangeLon, latPot, lonPot
         await axios.get("https://data.bmkg.go.id/lasttsunami.xml")
             .then(respon => {
-                var json = parser.toJson(respon.data)
-                var obj = JSON.parse(json)
+                let obj
+                parse(respon.data, (err, res)=>{
+                    let dat = JSON.stringify(res)
+                    let json = JSON.parse(dat)
+                    obj = json
+                })
+
                 tanggal = obj.Infotsunami.Gempa.Tanggal
                 latPot = obj.Infotsunami.Gempa.Lintang
                 lonPot = obj.Infotsunami.Gempa.Bujur
