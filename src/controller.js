@@ -164,8 +164,7 @@ export const addsite_1 = (request, response) => {
 
                 tanggal = obj.Infotsunami.Gempa.Tanggal
                 // uncomment dibawah untuk custom tgl potensi tsunami
-                // tanggal = '20-Jun-20'
-                tanggal = moment().format('DD-MMM-YY')
+                tanggal = '03-Apr-20'
                 // latPot = obj.Infotsunami.Gempa.Lintang
                 // lonPot = obj.Infotsunami.Gempa.Bujur
                 // tesing uncomment kode dibawah ini
@@ -203,7 +202,7 @@ export const addsite_1 = (request, response) => {
         newPasut = newData.pasut_sensor_ultrasonik
         dateNow = moment().format('DD-MMM-YY')
         // tesing uncomment kode dibawah
-        // dateNow = "03-Apr-20"
+        dateNow = "03-Apr-20"
         // ---------------
         datePotensi = tanggal
 
