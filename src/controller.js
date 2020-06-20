@@ -231,7 +231,7 @@ export const addsite_1 = (request, response) => {
                 console.log('Konfirmasi kedatangan tsunami')
                 var notifikasi = {
                     'nama': 'site 1',
-                    'date': moment().format(),
+                    'date': newData.date,
                     'ketinggian': hasil,
                     'lokasi': `${site1Lat}, ${site1Lon}`
                 }
