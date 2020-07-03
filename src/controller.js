@@ -9,10 +9,29 @@ import {
     site3,
     notif,
     lokasi,
-    deltamaps
+    deltamaps,
+    cmssdinda
 } from './model'
 
 // ------- Get Data ---------
+
+// Get CMSS
+export const getcmss = (request, response) => {
+    cmssdinda.find().exec((error, datas) => {
+        if (error) {
+            return response.json({
+                'success': false,
+                'message': 'Gagal mengambil data!',
+                error
+            })
+        }
+        return response.json({
+            'success': true,
+            'message': 'Berhasil mengambil data!',
+            datas
+        })
+    })
+}
 
 // Get Lokasi Delta
 export const getdelta = (request, response) => {
@@ -489,6 +508,26 @@ export const addsite_3 = (request, response) => {
 
     newData.save((error, data) => {
         global.io.emit('site-3', data)
+        if (error) {
+            return response.json({
+                'success': false,
+                'message': 'Gagal menambah data!',
+                error
+            })
+        }
+        return response.json({
+            'success': true,
+            'message': 'Berhasil Menambahkan data',
+            data
+        })
+    })
+}
+
+// Add CMSS Dinda
+export const addcmss = (request, response) => {
+    const newData = new cmssdinda(request.body)
+
+    newData.save((error, data) => {
         if (error) {
             return response.json({
                 'success': false,

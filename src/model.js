@@ -22,6 +22,9 @@ var Delta = mongoose.Schema({
     latitude: Number,
     longitude: Number
 })
+var Cmssdinda = mongoose.Schema({
+    message: String
+})
 
 const deltamaps = mongoose.model('Delta', Delta)
 const lokasi = mongoose.model('Lokasi', Lokasi)
@@ -29,6 +32,7 @@ const notif = mongoose.model('Notif', notifSchema)
 const site1 = mongoose.model('Site-1', Schema)
 const site2 = mongoose.model('Site-2', Schema)
 const site3 = mongoose.model('Site-3', Schema)
+const cmssdinda = mongoose.model('Cmss', Cmssdinda)
 
 export {
     deltamaps,
@@ -37,6 +41,7 @@ export {
     site1,
     site2,
     site3,
+    cmssdinda
 }
 
 // convert date to JSON => var d = new Date()

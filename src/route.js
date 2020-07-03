@@ -3,6 +3,10 @@ import * as controller from './controller'
 
 const Route = express.Router()
 
+Route.route('/cmss')
+    .get(controller.getcmss)
+    .post(controller.addcmss)
+
 Route.route('/delta')
     .get(controller.getdelta)
     .post(controller.adddelta)
